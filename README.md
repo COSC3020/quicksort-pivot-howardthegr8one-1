@@ -20,3 +20,33 @@ quantitatively reason with them.
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+## Median of Three Pivot Selection
+
+When choosing a pivot randomly (or by selecting the first or last element) results in choosing a good pivot roughly $\frac{1}{2}$ of the time, as half of the elements of a random array could be good pivots. 
+
+By choosing median of three the probablity that the pivot we choose is good rises to $68.75$%. The reason for this is because of the following: 
+
+The middle half of the array contains good pivots, and the first $\frac{1}{4}$ and last $\frac{1}{4}$ of the array contain bad pivots, in other words we have $B_{1}, G_{1}, G_{2}, B_{2}$ as our possible pivots. Since we're taking the median of three then we have $4\cdot4\cdot4 = 64$ total pivot possibilities. 
+
+Whenever we choose a permuation where two or more of the pivots come from the same bad section then we'll have a bad pivot that doesn't divide the array effectively. Thus the following would all result in bad pivots:
+
+$B_{1}, G_{1}, B_{1}$
+
+$B_{1}, G_{2}, B_{1}$
+
+$B_{1}, B_{1}, B_{2}$
+
+$B_{1}, B_{2}, B_{2}$
+
+$B_{2}, G_{2}, B_{2}$
+
+$B_{2}, G_{1}, B_{2}$
+
+Since there are six combos above and each has 3 permuations then we've found 18 bad possible pivots. There are two more though:
+
+$B_{1}, B_{1}, B_{1}$
+
+$B_{2}, B_{2}, B_{2}$
+
+Neither of these have different permuations and thus we have 20 bad pivot options and we have 64 total pivots, therefore $\frac{44}{64}=\frac{22}{32}=\frac{11}{16}=68.75$% of our pivots will be good using the median of three method, making it more efficient than choosing randomly. 
