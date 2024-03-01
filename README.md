@@ -27,7 +27,7 @@ When choosing a pivot randomly (or by selecting the first or last element) resul
 
 By choosing median of three the probablity that the pivot we choose is good rises to $68.75$%. The reason for this is because of the following: 
 
-The middle half of the array contains good pivots, and the first $\frac{1}{4}$ and last $\frac{1}{4}$ of the array contain bad pivots, in other words we have $B_{1}, G_{1}, G_{2}, B_{2}$ as our possible pivots. Since we're taking the median of three then we have $4\cdot4\cdot4 = 64$ total pivot possibilities. 
+The first $\frac{1}{4}$ and last $\frac{1}{4}$ of the array contain bad pivots, while the middle two $\frac{1}{4}$'s contain good pivots, in other words we have $B_{1}, G_{1}, G_{2}, B_{2}$ as our possible pivots. Since we're taking the median of three then we have $4\cdot4\cdot4 = 64$ total pivot possibilities. 
 
 Whenever we choose a permuation where two or more of the pivots come from the same bad section then we'll have a bad pivot that doesn't divide the array effectively. Thus the following would all result in bad pivots:
 
